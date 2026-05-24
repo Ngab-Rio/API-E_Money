@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "34cf2861-e787-41d7-bab0-0c990be0bfec",
+		"name": "E-Money",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33813031"
+	},
+	"item": [
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{local}}/api/transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJuYW1lIjoiTWFtYW4gQWRpIiwiZXhwIjoxNzc5NTE2NDI5LCJpYXQiOjE3Nzk1MTI4Mjl9.4giEVRzXL_h0azEyCrVj-puKwtoHonBrrfzmzei2rX8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{local}}/api/transaction/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Maman Adi\",\n    \"email\": \"muhammadadifirm32q@mail.com\",\n    \"password\": \"Ytta@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"muhammadadifirm32q@mail.com\",\n    \"password\": \"Ytta@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{local}}/api/account/summary"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Debts",
+			"item": [
+				{
+					"name": "Create Debt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJuYW1lIjoiTWFtYW4gQWRpIiwiZXhwIjoxNzc5NDY1NTc2LCJpYXQiOjE3Nzk0NjE5NzZ9.ODUZWBaqwuKeEc_HxUBM4aSRtF4kaw9UL-ec59Qx8aY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"person_name\": \"Peler\",\n    \"account_type\": \"bank\",\n    \"amount\": 10000,\n    \"type\": \"loan\",\n    \"status\": \"unpaid\",\n    \"note\": \"Pinjam Makan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/api/debts"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Debt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJuYW1lIjoiTWFtYW4gQWRpIiwiZXhwIjoxNzc5NDcwODgzLCJpYXQiOjE3Nzk0NjcyODN9.kf9g_LG8UzGki9O8mUjL8INnSSRHluRibCi51iTk0ho"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"person_name\": \"Peler\",\n    \"account_type\": \"bank\",\n    \"amount\": 10000,\n    \"type\": \"loan\",\n    \"status\": \"paid\",\n    \"note\": \"Pinjam Makan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/api/debts/8"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Debts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Debt by ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Debt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJuYW1lIjoiTWFtYW4iLCJleHAiOjE3Nzk1MTcyODYsImlhdCI6MTc3OTUxMzY4Nn0.8e2_Y1--tQs-YLyC1okMjOAdHv6MRoUc_XqDRX-xnyo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{local}}/api/debts/100"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
